@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  /* it will check the Montserrat first, if it does not have this font, then it will use the sans-serif backup font */
+  background-color: #f7f7f7;
+}
+
+.container {
+  background-color: lightblue;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: center;
+  max-width: 600px;
+  /* because max-width will bring it to the left >> need to set auto margin to bring it to the center */
+  border-radius: 5px;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  /* to bring city and Get weather button next to each other */
+  justify-content: center;
+  align-items: center;
+  /* because later when we format the child element, it will not be center, that's why have to set it center here */
+  margin-bottom: 20px;
+  /* background-color: red; */
+}
+
+form input[type='text']{
+  padding: 10px;
+  border: none;
+  outline: none;
+  /* outline is none > so when we click on the input area it does not show border */
+  font-size: 18px;
+  width: 60%; 
+  /* of its parent which means the form above */
+  margin-right: 5px;
+}
+
+form input[type='submit'] {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color .3s ease;
+}
+
+form input[type='submit']:hover {
+  background-color: darkblue;
+}
+
+.icon img {
+  width: 100px;
+  height: 100px;
+  background-size: contain;
+  /* to make sure the image inside the icon, in case the image is big */
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.temperature {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.description {
+  font-size: 24px;
+  margin: 20px;
+}
+
+.details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* to wrap it to a new line if the width is narrowed down */
+}
+
+.details > div {
+  padding: 20px;
+  background-color: #f1f1f1;
+  margin: 10px;
+  flex: 1;
+  border-radius: 5px;
+  text-align: center;
+  min-height: 45px;
+  /* so when we room in or room out, it has the same size for the height */
+}
+
+@media (max-width:768px) {
+  form {
+    flex-direction: column;
+  }
+
+  form input[type='text'] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
